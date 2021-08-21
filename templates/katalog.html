@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tytuł</th>
+                <th scope="col">Autor</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Lokalizacja</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pozycja in pozycje %}
+            <tr scope="row">
+                <td>{{ pozycja.id }}</td>
+                <td>{{ pozycja.tytul }}</td>
+                <td>{{ pozycja.autor }}</td>
+                <td>{{ pozycja.isbn }}</td>
+                <td>{{ pozycja.lokalizacja }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-md-3">
+            Wyświetl:
+            <a href="#">10</a>
+            <a href="#">20</a>
+            <a href="#">50</a>
+            pozycji
+        </div>
+        <!-- TODO: zmiana ilości wyświetlanych rekordów na stronie-->
+        <!-- TODO: wyświetlanie ilości rekordów w ogóle -->
+        <!-- TODO: zmiana stron-->
+    </div>
+{% endblock %}
